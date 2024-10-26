@@ -13,13 +13,12 @@
 }
 
 :root{
-    --bg-color: #F1FAFE;
-    --second-bg-color: #A8DADC;
-    --text-color: #1D3357;
-    --main-color: #457B9D;
-    --second-main-color: #2A9D8F;
-    --second-text-color: #B0BEC5;
-    --third-text-color: #E9C46A;
+    --bg-color           : #0e171a;
+    --primary-color      : #a4c5cf;
+    --text-color         : #ebf3f5; 
+    --secondary-color    : #683741; 
+    --accent-color       : #b3946f;
+    
 }
 
 html {
@@ -39,11 +38,11 @@ html::-webkit-scrollbar{
 }
 
 html::-webkit-scrollbar-track{
-    background: var(--bg-color);
+    background: var(--text-color);
 }
 
 html::-webkit-scrollbar-thumb{
-    background: var(--main-color);
+    background: var(--primary-color);
 }
 
 /* Header ..........................................................*/
@@ -52,20 +51,23 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem 5%; /* Reduced padding for better appearance */
-    background: rgba(29, 53, 87, 0.9); /* Slightly increased opacity */
+    padding: 2.5rem 5%; /* Reduced padding for better appearance */
+    background: var(--bg-color); /* Slightly increased opacity */
     filter: drop-shadow(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    border-bottom: 3px solid var(--primary-color);
 }
 
 /* Logo */
 .logo {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Akaya Telivigala';
     font-size: 3rem;
-    color: var(--main-color); /* Electric Blue */
+    background-image: linear-gradient(120deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
     font-weight: 800;
     cursor: pointer;
     transition: 0.5s ease;
@@ -83,18 +85,24 @@ header {
 
 /* Navigation */
 .navbar a {
-    font-size: 1.6rem; /* Slightly reduced size for better mobile compatibility */
+    font-size: 1.6rem; 
     color: var(--text-color); 
-    margin-left: 3rem; /* Adjust margin for better spacing */
+    margin-left: 3rem;
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
 }
 
-.navbar a:hover,
+.navbar a:hover{
+    color: var(--primary-color); 
+    border-bottom: 3px solid var(--primary-color); 
+}
 .navbar a.active {
-    color: var(--main-color); 
-    border-bottom: 3px solid var(--main-color); 
+    color: var(--text-color); 
+    background-color: var(--primary-color); /* Background color for active state */
+    border-bottom: none; /* Remove bottom border */
+    border-radius: 0.5rem; /* Rounded corners */
+    padding: 2rem 2rem; /* Ensure padding is consistent */
 }
 
 @media (max-width: 995px) {
@@ -137,7 +145,7 @@ header {
 section {
     min-height: 100vh;
     padding: 5rem 9% 5rem;
-    background: var(--bg-color); /* Soft Pale Grey */
+    background: var(--bg-color); 
 }
 
 /* Home Section ..........................................................*/
@@ -146,7 +154,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background: var(--bg-color); /* Dark Purple */
+    background: var(--bg-color); 
 }
 
 .home .home-content h1 {
@@ -156,8 +164,12 @@ section {
     color: var(--text-color);
 }
 
-span {
-    color: var(--main-color); 
+.home .home-content .myName {
+    
+    background-image: linear-gradient(120deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: 'Akaya Telivigala';
 }
 
 .home .home-content h3 {
@@ -165,10 +177,6 @@ span {
     margin-bottom: 1rem;
     font-weight: 700;
     color: var(--second-bg-color); /* Purple */
-}
-
-h3 span {
-    color: #FF3C68; /* Bright Pink */
 }
 
 .home-content p { 
@@ -185,14 +193,14 @@ h3 span {
     position: relative;
     width: 30vw;
     border-radius: 50%;
-    box-shadow: 0 0 25px solid var(--main-color); 
+    box-shadow: 0 0 25px solid var(--accent-color); 
     cursor: pointer;
     transition: 0.2s linear;
 }
 
 .home-img img:hover {
     transform: scale(1.01);
-    filter: drop-shadow(0 0 25px var(--main-color));
+    filter: drop-shadow(0 0 25px var(--accent-color));
 }
 
 /* Social Icons */
@@ -203,19 +211,19 @@ h3 span {
     width: 4rem;
     height: 4rem;
     background: transparent;
-    border: 0.2rem solid var(--main-color);
+    border: 0.2rem solid var(--primary-color);
     font-size: 2rem;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
-    color: var(--main-color); /* Bright Pink */
+    color: var(--primary-color); /* Bright Pink */
 }
 
 .social-icons a:hover {
     color: white; 
     transform: scale(1.3) translateY(-5px);
-    background: var(--main-color); /* Bright Pink */
-    box-shadow: 0 0 25px var(--main-color);
+    background: var(--primary-color); /* Bright Pink */
+    box-shadow: 0 0 25px var(--primary-color);
 }
 
 /* Button Styling */
@@ -225,19 +233,19 @@ h3 span {
     background-color: var(--bg-color);
     border-radius: 4rem;
     font-size: 1.6rem;
-    color: var(--main-color); 
+    color: var(--primary-color); 
     letter-spacing: 0.1rem;
     font-weight: 600;
-    border: 2px solid var(--main-color);
+    border: 2px solid var(--primary-color);
     transition: 0.3s ease;
     cursor: pointer;
 }
 
 .btn:hover {
-    transform: scale(1.03);
-    background-color: var(--main-color);
     color: white; 
-    box-shadow: 0 0 25px var(--main-color);
+    transform: scale(1.3);
+    background: var(--primary-color); /* Bright Pink */
+    box-shadow: 0 0 25px var(--primary-color);
 }
 
 /* Typing Text */
@@ -249,11 +257,16 @@ h3 span {
 
 .animated-text span {
     position: relative;
+    background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .animated-text span::before {
     content: "Mobile Developer";
-    color: var(--main-color); 
+    background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    color: transparent;
     animation: words 20s infinite;
 }
 
@@ -331,25 +344,26 @@ h3 span {
 /* Services section ...........................................................*/
 
 .services{
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 
 .heading{
     font-size: 15rem;
     text-align: center;
+    color: var(--text-color);
 }
 
 .services-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    gap: 2.5rem;
+    gap: 5.5rem;
 }
 
 .service-box{
-    background-color: var(--main-color);
-    height: 350px;
-    border: 3px solid #FF3C68;
+    color: var(--text-color);
+    height: 250px;
+    border: 3px solid var(--primary-color);
     border-radius: 3rem;
     cursor: pointer;
     transition: 0.3s ease;
@@ -359,7 +373,8 @@ h3 span {
     background: transparent;
     color: var(--text-color);
     transform: scale(1.04);
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 25px var(--primary-color);
 }
  
 .service-box .service-info{
@@ -409,8 +424,12 @@ h3 span {
     background: var(--bg-color);
 }
 
+.skills h2{
+    color: var(--text-color);
+}
+
 .skills .container{
-    background: #e1352c54;
+    background: var(--accent-color);
     color: var(--text-color);
     border-radius: 1rem;
     padding: 2rem;
@@ -431,13 +450,13 @@ h3 span {
     padding: 10px;
     border-radius: 1rem;
     background: var(--bg-color);
-    box-shadow: 0 4px 10px var(--main-color);
+    box-shadow: 0 5px 10px var(--secondary-color);
     transition: 0.3s ease;
     cursor: pointer;
 }
 
 .skills .container .bar:hover{
-    box-shadow: 0 4px 10px var(--main-color);
+    box-shadow: 0 4px 10px var(--primary-color);
     transform: scale(1.04);
 }
 
@@ -450,6 +469,7 @@ h3 span {
 }
 
 .skills .container .bar .info span{
+    color: var(--text-color);
     font-size: 2rem;
     font-weight: 500;
     margin-left: 0.5rem;
@@ -478,7 +498,7 @@ h3 span {
 /* education section ..........................................................*/
 
 .education{
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 
 .education .timeline{
@@ -491,7 +511,7 @@ h3 span {
     content: '';
     position: absolute;
     width: 6px;
-    background: rgb(90, 64, 64);
+    background: var(--accent-color);
     top: 0;
     bottom: 0;
     left: 50%;
@@ -515,7 +535,7 @@ h3 span {
     line-height: 25px;
     right: -17px;
     background-color: rgb(252, 252, 252);
-    border: 4px solid #171721;
+    border: 4px solid var(--primary-color);
     top: 15px;
     border-radius: 50%;
     z-index: 100;
@@ -542,9 +562,9 @@ h3 span {
     width: 0;
     z-index: 1;
     right: 30px;
-    border: medium solid var(--main-color);
+    border: medium solid var(--primary-color);
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent var(--main-color);
+    border-color: transparent transparent transparent var(--primary-color);
 }
 
 .education .right::before{
@@ -555,9 +575,9 @@ h3 span {
     width: 0;
     z-index: 1;
     left: 30px;
-    border: medium solid var(--main-color);
+    border: medium solid var(--primary-color);
     border-width: 10px 10px 10px 0;
-    border-color: transparent var(--main-color) transparent transparent;
+    border-color: transparent var(--primary-color) transparent transparent;
 }
 
 .education .right::after{
@@ -568,7 +588,7 @@ h3 span {
     background: var(--main-color);
     position: relative;
     border-radius: 6px;
-    border: 1px solid #FF3C68;
+    border: 1px solid var(--primary-color);
 }
 
 .education .content .tag{
@@ -585,13 +605,13 @@ h3 span {
 .education .content .tag h2{
     font-size: 2.3rem;
     font-weight: 600;
-    color: #171721;
+    color: var(--accent-color);
 }
 
 .education .content .decs p{
     font-size: 1.5rem;
     font-weight: 500;
-    color: #FF7130;
+    color: var(--text-color);
 }
 
 @media screen and (max-width:600px){
@@ -637,7 +657,7 @@ h3 span {
 
 .contact h2{
     margin-bottom: 3rem;
-    color: white;
+    color: var(--text-color);
 }
 
 .contact form{
@@ -661,7 +681,7 @@ h3 span {
     color: var(--text-color);
     background: var(--bg-color);
     border-radius: 0.8rem;
-    border: 2px solid var(--main-color);
+    border: 2px solid var(--primary-color);
     margin: 1rem 0;
     resize: none;
 }
@@ -677,7 +697,8 @@ h3 span {
     bottom: 0;
     width: 100%;
     padding: 40px 0;
-    background-color: var(--main-color);
+    background-color: var(--bg-color);
+    border-top: 3px solid var(--primary-color);
 }
 
 .footer .social{
@@ -688,8 +709,8 @@ h3 span {
 
 .footer .social a{
     font-size: 25px;
-    color: black;
-    border: 2px solid black;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
     width: 42px;
     height: 42px;
     line-height: 42px;
@@ -702,8 +723,9 @@ h3 span {
 
 .footer .social a:hover{
     transform: scale(1.2)translateY(-5px);
-    background: black;
-    color: var(--main-color);
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 25px var(--primary-color);
 }
 
 .footer ul{
@@ -716,13 +738,13 @@ h3 span {
 }
 
 .footer ul li a{
-    color: black;
+    color: var(--text-color);
     border-bottom: 3px solid transparent;
     transition: 0.3s ease;
 }
 
 .footer ul li a:hover{
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .footer ul li{
@@ -734,7 +756,7 @@ h3 span {
     margin-top: 50px;
     text-align: center;
     font-size: 16px;
-    color: black;
+    color: var(--text-color);
 }
 
 @media(max-width:1285px){
