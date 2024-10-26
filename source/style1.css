@@ -440,7 +440,7 @@ section {
 
 .skills .container .row{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     flex-wrap: wrap;
     gap: 1.8rem;
 }
@@ -453,6 +453,13 @@ section {
     box-shadow: 0 5px 10px var(--secondary-color);
     transition: 0.3s ease;
     cursor: pointer;
+}
+
+.skills .container .bar img {
+    width: 100px; /* Set a fixed width */
+    height: 100px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 0.5rem; /* Optional: Add some rounding to the images */
 }
 
 .skills .container .bar:hover{
