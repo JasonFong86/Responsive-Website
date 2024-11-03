@@ -1,0 +1,10 @@
+/* colors style sheet */
+
+:root{
+    --bg-color           : #0e171a;
+    --primary-color      : #a4c5cf;
+    --text-color         : #ebf3f5; 
+    --secondary-color    : #683741; 
+    --accent-color       : #b3946f;
+
+}
